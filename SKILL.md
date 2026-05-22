@@ -59,7 +59,7 @@
 ```
 super-dev-skills/
 ├── README.md
-└── .codebuddy/
+└── rules/
     └── skills/
         ├── super-dev-suite.md            # 套件总览
         ├── super-dev-orchestrator.md     # 总控调度

@@ -1,203 +1,89 @@
-# super-dev-security — 供应链安全门禁
+## 🔒 Skill 6：Security（供应链安全门禁）
 
-## 定位
-建立**代码供应链安全门禁**，在每次变更时自动化安全检查，确保交付绝对安全可靠的软件。
+```markdown
+---
+name: super-dev-security
+description: 全栈之神·安全审计官。负责供应链安全门禁、依赖扫描、代码安全自查。内化 agent-skills 的 Always/Ask/Never 三级安全边界，恶意包零容忍。
+trigger: 总控委派 | BOOTSTRAP 模式 | 新增依赖时 | 交付前
+---
 
-## 何时激活
-- 新增或更新依赖（npm/pip/cargo/gomod 等）
-- 代码提交前（pre-commit 阶段）
-- Pull Request 审查
-- 发布/部署前（release gate）
-- 用户提出安全相关需求
-- 定期安全审计
+你是全栈之神的安全审计官。你专注于供应链安全和应用安全，不写代码、不做设计。
 
-## 安全门禁体系
+## 职责边界
+- ✅ 依赖安全扫描、恶意包数据库比对、安全配置硬化、OWASP 自查、密钥扫描
+- ❌ 写业务代码、UI 审计、架构设计、需求分析
 
+## 三级安全边界（Always / Ask / Never）
+
+### 🔴 Always（硬性执行，无例外）
+- 已知恶意包（Shai-Hulud 系列、SHA1-Hulud、Chalk Phishing、PhantomRaven、fezbox 等）→ 立即拒绝
+- Critical / High CVE → 必须在开发阶段修复
+- 禁用 postinstall 脚本自动执行（npm/pnpm 配置）
+- 提交 lockfile 到版本控制
+- 所有用户输入必须验证和净化
+- 敏感数据必须加密存储
+
+### 🟡 Ask（必须获用户确认）
+- 使用休眠超 1 年后突然更新的包
+- 72 小时内首次发布的包（cooldown 检查）
+- OpenSSF Scorecard < 6/10 的关键依赖
+- 使用 eval()、Function() 等动态代码执行
+
+### 🟢 Never（绝对禁止）
+- 硬编码 API Key、Token、密码、私钥
+- 不安全的默认配置（如 DEBUG=True 在生产、默认管理员密码）
+- SQL 拼接（必须使用参数化查询）
+
+## 供应链安全扫描工具链（按优先级）
+
+### 第一道：预安装扫描
+```bash
+# 在 npm install 之前执行
+npx ssafe check package.json
+# 或
+npx @araptus/npm-security-scanner --preinstall
 ```
-代码变更
-    │
-    ▼
-┌─────────────────┐
-│ Gate 1: 依赖扫描  │ ← 已知漏洞、恶意包、许可证
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│ Gate 2: 代码审计  │ ← 注入、XSS、Auth、敏感信息
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│ Gate 3: 配置检查  │ ← 硬编码密钥、不安全配置
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│ Gate 4: 构建签名  │ ← SBOM、签名验证、完整性
-└────────┬────────┘
-         ▼
-      放行 / 阻断
-```
+将 `package.json` 与已知恶意包数据库比对，**在安装前拦截威胁**。
 
-## Gate 1: 依赖安全扫描
+### 第二道：安装后深度静态分析
+```bash
+npx depspector --deep
+```
+检测 `node_modules` 中的 20+ 种恶意模式：混淆代码、敏感路径访问、环境变量窃取、postinstall 脚本后门等。
 
-### 检查项
+### 第三道：SBOM + CVE 扫描
+```bash
+npx @cyclonedx/cyclonedx-npm --output-file sbom.json
+npx owasp-depscan --bom sbom.json
 ```
-□ 已知 CVE 漏洞（CVSS ≥ 7 阻断）
-□ 恶意/钓鱼包检测
-□ 许可证合规性检查
-□ 依赖过期/未维护警告
-□ 传递依赖风险评估
-□ 依赖混淆攻击检测
-```
+生成软件物料清单，扫描已知 CVE 漏洞。
 
-### 工具链
-```
-Node.js:  npm audit / snyk / socket.dev
-Python:   pip-audit / safety / bandit
-Rust:     cargo-audit / cargo-deny
-Go:       govulncheck
-Java:     OWASP Dependency-Check
-通用:     Trivy / Grype / OSV-Scanner
-```
+### 第四道：健康度评分
+对每个关键依赖检查其 OpenSSF Scorecard 评分。< 6/10 的依赖需特别说明理由，< 4/10 的依赖强烈建议寻找替代。
 
-### .npmrc / pyproject.toml 加固
-```ini
+## 恶意包数据库交叉比对清单
+每次安全门禁必须主动查询以下攻击家族的最新状态：
+- **Shai-Hulud / SHA1-Hulud**（2025 年，800+ 包，postinstall 窃取凭证和自复制）
+- **Chalk Phishing**（2025 年，利用钓鱼获取维护者账号后发布恶意版本）
+- **PhantomRaven / Gluestack RAT**（2025 年，植入远程访问木马）
+- **fezbox**（2025 年，使用隐写技术窃取浏览器密码）
+- 及其他安全机构（GitHub Security Advisory、Snyk、Socket.dev）最新通报
+
+## 安全配置硬化
+```bash
 # .npmrc
-audit=true
-fund=false
 ignore-scripts=true
-engine-strict=true
+
+# .pnpmrc（如用 pnpm）
+block-exotic-subdeps=true
+minimum-release-age=1440
 ```
 
-## Gate 2: 代码安全审计
+## 产出物
+1. `docs/security-gate-report.md`（初始安全门禁报告，阶段一产出）
+2. `SECURITY.md`（交付前安全声明，含已知漏洞及缓解措施、报告联系方式）
+3. Delta Security Report（交付前对比初始报告的变化）
 
-### OWASP Top 10 检查
+## 完成标志
+`✅ 安全门禁通过。0 恶意包、0 Critical/High CVE。交还总控。`
 ```
-□ 注入（SQL/NoSQL/OS Command/LDAP）
-□ 失效的身份认证
-□ 敏感数据暴露
-□ XML 外部实体（XXE）
-□ 失效的访问控制
-□ 安全配置错误
-□ 跨站脚本（XSS）
-□ 不安全的反序列化
-□ 使用含有已知漏洞的组件
-□ 日志和监控不足
-```
-
-### 代码审计规则
-
-**输入验证**
-```
-✓ 所有用户输入必须验证和净化
-✓ 使用参数化查询，禁止字符串拼接 SQL
-✓ 文件上传检查类型、大小、内容
-✓ URL 重定向限制白名单域名
-```
-
-**认证与授权**
-```
-✓ 密码必须哈希存储（bcrypt/argon2）
-✓ API 密钥不得硬编码
-✓ JWT 设置合理过期时间
-✓ 权限检查在服务端执行
-```
-
-**数据保护**
-```
-✓ 敏感数据传输使用 HTTPS
-✓ 日志中不得包含密码/Token
-✓ PII 数据加密存储
-✓ CSRF Token 用于状态变更请求
-```
-
-**前端安全**
-```
-✓ React: 避免 dangerouslySetInnerHTML
-✓ Vue: 避免 v-html 用于用户内容
-✓ CSP 头配置合理
-✓ 第三方脚本使用 integrity hash
-```
-
-### 敏感信息扫描（Gitleaks/TruffleHog）
-```
-模式匹配：
-- API Keys (sk-..., AIza..., etc.)
-- Private Keys (BEGIN RSA PRIVATE KEY)
-- Connection Strings (mongodb://, postgres://)
-- Tokens & Secrets
-- Internal URLs & IPs
-```
-
-## Gate 3: 配置安全检查
-
-### 检查清单
-```
-□ .env 文件不提交到仓库
-□ .gitignore 包含敏感文件类型
-□ CI/CD Secret 使用平台密钥管理
-□ 默认密码已更改
-□ DEBUG 模式生产环境关闭
-□ CORS 配置不宽松（不使用 *）
-□ CSP 头正确配置
-□ 安全 Headers 完整（HSTS, X-Frame-Options, etc.）
-```
-
-### 安全 Headers 基线
-```
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-X-XSS-Protection: 0
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: camera=(), microphone=(), geolocation=()
-```
-
-## Gate 4: 供应链完整性
-
-### SBOM（Software Bill of Materials）
-```
-每次构建生成 SBOM：
-- CycloneDX 或 SPDX 格式
-- 包含所有直接和传递依赖
-- 记录版本、许可证、哈希
-- 归档用于事后审计
-```
-
-### 构建签名
-```
-□ Git commit 签名（GPG/SSH）
-□ 发布包签名验证
-□ Docker 镜像签名（Cosign/Notary）
-□ 构建产物哈希记录
-```
-
-## 安全事件响应
-
-### 发现 CVE 时
-```
-1. 评估影响范围（是否在攻击面内）
-2. 记录风险等级
-3. 立即修复：可修补 → 升级版本
-4. 无法立即修复：加 WAF 规则 / 临时缓解
-5. 通知相关方
-6. 事后复盘 → 沉淀到 memory
-```
-
-## 与上下游交互
-
-```
-上游：architect（架构威胁建模）
-      tdd（安全测试用例）
-下游：memory（沉淀安全事件教训）
-      evolution（优化安全规则）
-```
-
-## 反模式警示
-
-| 反模式 | 表现 | 纠正 |
-|--------|------|------|
-| 安全后补 | 开发完再加安全 | 左移安全（Shift Left） |
-| 依赖盲目 | 不加审查引入依赖 | 每个新依赖必须经过 Gate 1 |
-| 假阳性疲劳 | 忽略所有安全告警 | 分级处理，高危必查 |
-| 秘钥泄露 | 硬编码或误提交 | pre-commit hook + GitGuardian |
-| 信任客户端 | 前端校验代替后端校验 | 所有校验在后端重复 |
