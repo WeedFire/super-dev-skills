@@ -1,0 +1,127 @@
+{
+  "id": "super-dev",
+  "name": "Super-Dev 全栈之神",
+  "version": "1.0.0",
+  "description": "全栈之神·自进化零缺陷交付套件 — 需求深访 + 共享语言 + TDD + 感官级UI/UX验证 + 供应链安全门禁 + 分层记忆系统 + 技能自我进化",
+  "author": "Super-Dev Team",
+  "license": "MIT",
+  "icon": "🦞",
+  "homepage": "https://github.com/super-dev-skills",
+  "tags": [
+    "development",
+    "tdd",
+    "security",
+    "architecture",
+    "code-quality",
+    "ux",
+    "requirements"
+  ],
+  "skills": [
+    "super-dev-orchestrator",
+    "super-dev-requirements",
+    "super-dev-architect",
+    "super-dev-tdd",
+    "super-dev-ux",
+    "super-dev-security",
+    "super-dev-memory",
+    "super-dev-evolution",
+    "super-dev-shared-language"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "autoAudit": {
+        "type": "boolean",
+        "default": true,
+        "description": "代码变更时自动触发安全审计"
+      },
+      "strictTDD": {
+        "type": "boolean",
+        "default": false,
+        "description": "强制 TDD 流程：先写测试再写实现"
+      },
+      "auditLevel": {
+        "type": "string",
+        "enum": ["low", "medium", "high", "critical"],
+        "default": "high",
+        "description": "安全审计最低告警级别"
+      },
+      "uxCheckEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "启用 UI/UX 最佳实践检查"
+      },
+      "architectureReviewEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "启用架构设计审查"
+      },
+      "dependencyCheckEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "启用依赖安全扫描"
+      }
+    },
+    "required": []
+  },
+  "uiHints": {
+    "autoAudit": {
+      "label": "自动安全审计",
+      "help": "每次代码变更后自动运行安全审计工具"
+    },
+    "strictTDD": {
+      "label": "严格 TDD 模式",
+      "help": "强制执行 Red→Green→Refactor 开发循环"
+    },
+    "auditLevel": {
+      "label": "审计级别",
+      "help": "低于此级别的安全告警将被过滤"
+    },
+    "uxCheckEnabled": {
+      "label": "UI/UX 检查",
+      "help": "启用前端代码的 UX 最佳实践检查"
+    },
+    "architectureReviewEnabled": {
+      "label": "架构审查",
+      "help": "在新模块创建时进行架构设计审查"
+    },
+    "dependencyCheckEnabled": {
+      "label": "依赖安全扫描",
+      "help": "安装新依赖时自动扫描已知漏洞"
+    }
+  },
+  "tools": [
+    {
+      "name": "super_dev_analyze_requirements",
+      "description": "使用 5W2H-D 框架深度分析需求，输出结构化用户故事和验收标准"
+    },
+    {
+      "name": "super_dev_review_architecture",
+      "description": "审查系统架构设计，检查 Chesterton's Fence 原则，输出 ADR 建议"
+    },
+    {
+      "name": "super_dev_audit_security",
+      "description": "运行四级安全门禁扫描：依赖漏洞、代码审计、配置检查、供应链完整性"
+    },
+    {
+      "name": "super_dev_check_ux",
+      "description": "感官级 UI/UX 验证：检查组件无障碍、响应式、动效规范和 AI 美学反模式"
+    },
+    {
+      "name": "super_dev_generate_test_scaffold",
+      "description": "根据函数签名自动生成 TDD 测试脚手架（Red→Green→Refactor 循环）"
+    },
+    {
+      "name": "super_dev_analyze_code_quality",
+      "description": "分析代码质量：复杂度、重复代码、命名规范、SOLID 原则符合度"
+    },
+    {
+      "name": "super_dev_generate_adr",
+      "description": "根据架构决策内容生成标准 ADR（Architecture Decision Record）文档"
+    },
+    {
+      "name": "super_dev_build_shared_language",
+      "description": "从代码和文档中提取领域术语，建立统一语言术语表"
+    }
+  ]
+}
