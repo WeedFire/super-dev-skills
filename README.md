@@ -44,7 +44,7 @@
 ## 📁 套件结构
 
 ```
-rules/
+
 ├── skills/
 │   ├── super-dev-orchestrator.md      # 总控调度：模式识别、任务委派、记忆存取
 │   ├── super-dev-requirements.md     # 需求分析师：结构化深访、用户故事、验收标准
@@ -66,15 +66,15 @@ rules/
 
 | # | Skill | 文件 | 职责 |
 |---|-------|------|------|
-| 🎯 | Orchestrator | [super-dev-orchestrator.md](rules/skills/super-dev-orchestrator.md) | 总控调度、模式识别、任务委派、记忆存取 |
-| 📋 | Requirements | [super-dev-requirements.md](rules/skills/super-dev-requirements.md) | 需求深访、用户故事提炼、验收标准、共享语言建立 |
-| 🏗️ | Architect | [super-dev-architect.md](rules/skills/super-dev-architect.md) | 系统架构、技术选型、ADR 决策记录 |
-| 🧪 | TDD | [super-dev-tdd.md](rules/skills/super-dev-tdd.md) | 测试驱动开发、Red→Green→Refactor 循环 |
-| 🎨 | UX | [super-dev-ux.md](rules/skills/super-dev-ux.md) | 感官级 UI/UX 验证、无障碍、响应式 |
-| 🔒 | Security | [super-dev-security.md](rules/skills/super-dev-security.md) | 供应链安全门禁、依赖扫描、代码审计 |
-| 🧠 | Memory | [super-dev-memory.md](rules/skills/super-dev-memory.md) | 分层记忆系统、经验沉淀、知识检索 |
-| 🔄 | Evolution | [super-dev-evolution.md](rules/skills/super-dev-evolution.md) | 技能自我进化、套件迭代优化 |
-| 🗣️ | Shared Lang | [super-dev-shared-language.md](rules/skills/super-dev-shared-language.md) | 统一领域语言、消除翻译损耗 |
+| 🎯 | Orchestrator | [super-dev-orchestrator.md](skills/super-dev-orchestrator/SKILL.md) | 总控调度、模式识别、任务委派、记忆存取 |
+| 📋 | Requirements | [super-dev-requirements.md](skills/super-dev-requirements/SKILL.md) | 需求深访、用户故事提炼、验收标准、共享语言建立 |
+| 🏗️ | Architect | [super-dev-architect.md](skills/super-dev-architect/SKILL.md) | 系统架构、技术选型、ADR 决策记录 |
+| 🧪 | TDD | [super-dev-tdd.md](skills/super-dev-tdd/SKILL.md) | 测试驱动开发、Red→Green→Refactor 循环 |
+| 🎨 | UX | [super-dev-ux.md](skills/super-dev-ux/SKILL.md) | 感官级 UI/UX 验证、无障碍、响应式 |
+| 🔒 | Security | [super-dev-security.md](skills/super-dev-security/SKILL.md) | 供应链安全门禁、依赖扫描、代码审计 |
+| 🧠 | Memory | [super-dev-memory.md](skills/super-dev-memory/SKILL.md) | 分层记忆系统、经验沉淀、知识检索 |
+| 🔄 | Evolution | [super-dev-evolution.md](skills/super-dev-evolution/SKILL.md) | 技能自我进化、套件迭代优化 |
+| 🗣️ | Shared Lang | [super-dev-shared-language.md](skills/super-dev-shared-language/SKILL.md) | 统一领域语言、消除翻译损耗 |
 
 ## 🚀 快速开始
 
@@ -162,7 +162,5 @@ echo "✅ 初始化完成！在 Claude Code 中激活 super-dev-orchestrator 即
 
 ## 📄 许可证
 
-MIT © 2025 Super-Dev Suite
+MIT © 2026 小草
 ```
-
-这个 README 完整介绍了套件的背景、与 agent-skills 的关系、结构、使用方法、安全能力和文档体系，可以直接作为项目首页发布。
