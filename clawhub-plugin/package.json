@@ -20,11 +20,11 @@
     "ux",
     "code-quality"
   ],
-  "author": "Super-Dev Team",
+  "author": "WeedFire",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/super-dev-skills/clawhub-plugin"
+    "url": "https://github.com/WeedFire/super-dev-skills"
   },
   "engines": {
     "node": ">=18.0.0"
