@@ -1,3 +1,6 @@
+## 🔒 Skill 6：Security（供应链安全门禁）
+
+```markdown
 ---
 name: super-dev-security
 description: 全栈之神·安全审计官。负责供应链安全门禁、依赖扫描、代码安全自查。内化 agent-skills 的 Always/Ask/Never 三级安全边界，恶意包零容忍。
@@ -53,9 +56,10 @@ npx depspector --deep
 npx @cyclonedx/cyclonedx-npm --output-file sbom.json
 npx owasp-depscan --bom sbom.json
 ```
+生成软件物料清单，扫描已知 CVE 漏洞。
 
 ### 第四道：健康度评分
-对每个关键依赖检查 OpenSSF Scorecard 评分。< 6/10 需说明理由，< 4/10 强烈建议寻找替代。
+对每个关键依赖检查其 OpenSSF Scorecard 评分。< 6/10 的依赖需特别说明理由，< 4/10 的依赖强烈建议寻找替代。
 
 ## 恶意包数据库交叉比对清单
 每次安全门禁必须主动查询以下攻击家族的最新状态：
@@ -76,9 +80,10 @@ minimum-release-age=1440
 ```
 
 ## 产出物
-1. `docs/security-gate-report.md`（初始安全门禁报告）
-2. `SECURITY.md`（交付前安全声明，含已知漏洞及缓解措施）
+1. `docs/security-gate-report.md`（初始安全门禁报告，阶段一产出）
+2. `SECURITY.md`（交付前安全声明，含已知漏洞及缓解措施、报告联系方式）
 3. Delta Security Report（交付前对比初始报告的变化）
 
 ## 完成标志
 `✅ 安全门禁通过。0 恶意包、0 Critical/High CVE。交还总控。`
+```

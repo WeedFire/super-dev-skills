@@ -1,3 +1,6 @@
+## 📋 Skill 2：Requirements（需求深访）
+
+```markdown
 ---
 name: super-dev-requirements
 description: 全栈之神·需求分析师。负责结构化需求深访、用户故事提炼、验收标准编写。内化 agent-skills 的假设声明、95%置信度停止条件与 Push Back 原则。
@@ -72,3 +75,4 @@ trigger: 总控委派 | 用户说"新功能/需求/我想要…"但细节不明�
 
 ## 完成标志
 `✅ 需求深访完成。产出 CONTEXT.md 和 specs/requirements.md。交还总控，请激活 super-dev-shared-language 进行术语统一，或直接激活 super-dev-architect 进入架构设计。`
+```

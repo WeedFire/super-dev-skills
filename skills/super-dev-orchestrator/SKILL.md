@@ -1,3 +1,7 @@
+
+## 🎯 Skill 1：Orchestrator（总控调度）
+
+```markdown
 ---
 name: super-dev-orchestrator
 description: 全栈之神·总控调度。自动识别任务模式，按需委派9个子Skill，统一管理.memory/三层记忆的加载与持久化。不自带任何开发能力，只做调度与记忆存取。
@@ -53,7 +57,7 @@ trigger: 任何开发相关任务
 3. 容量超限时自动压缩（MEMORY ≤ 2200 字符，USER ≤ 1375 字符）
 
 ## 子 Skill 激活方式
-每次只激活一个子 Skill：
+每次只激活一个子 Skill，使用以下格式：
 ```
 🔀 委派：super-dev-requirements
 📋 任务：对用户需求进行结构化深访
@@ -71,3 +75,4 @@ trigger: 任何开发相关任务
 3. 根据模式激活对应的第一个业务子 Skill
 
 不在此 Skill 内执行任何开发、设计或审计操作。
+```

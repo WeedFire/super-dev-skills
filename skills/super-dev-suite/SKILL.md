@@ -1,9 +1,3 @@
----
-name: super-dev-suite
-description: 全栈之神·自进化零缺陷交付套件总览。采用总控调度 + 子 Skill 按需激活的 MoE（混合专家）架构，解决单体 Skill 上下文浪费的核心痛点。
-trigger: 用户想了解套件全貌 | 新成员 Onboarding | 用户说"super-dev 有哪些能力"
----
-
 # super-dev-suite — 全栈之神·自进化零缺陷交付套件
 
 ## 套件概述
@@ -45,17 +39,17 @@ trigger: 用户想了解套件全貌 | 新成员 Onboarding | 用户说"super-de
 
 ## 子 Skill 清单
 
-| # | Skill | 职责 | 激活条件 |
-|---|-------|------|----------|
-| 🎯 | Orchestrator | 总控调度、模式识别、任务委派、记忆存取 | 任务开始/结束 |
-| 📋 | Requirements | 需求深访、用户故事提炼、验收标准 | 新功能/需求变更 |
-| 🏗️ | Architect | 系统架构、技术选型、模块设计 | 架构决策 |
-| 🧪 | TDD | 测试驱动开发、红绿重构循环 | 编码实现 |
-| 🎨 | UX | 感官级UI/UX验证、无障碍、响应式 | 前端/UI变更 |
-| 🔒 | Security | 供应链安全、代码审计、依赖扫描 | 依赖变更/部署前 |
-| 🧠 | Memory | 分层记忆系统、经验沉淀、知识管理 | 任务完成后 |
-| 🔄 | Evolution | 技能自我进化、套件迭代优化 | 周期性/里程碑 |
-| 🗣️ | Shared Lang | 共享语言建立、DDD统一语言 | 需求/建模阶段 |
+| Skill | 文件名 | 职责 | 激活条件 |
+|-------|--------|------|----------|
+| 🎯 Orchestrator | `super-dev-orchestrator.md` | 总控调度、模式识别、任务委派、记忆存取 | 任务开始/结束 |
+| 📋 Requirements | `super-dev-requirements.md` | 需求深访、用户故事提炼、验收标准 | 新功能/需求变更 |
+| 🏗️ Architect | `super-dev-architect.md` | 系统架构、技术选型、模块设计 | 架构决策 |
+| 🧪 TDD | `super-dev-tdd.md` | 测试驱动开发、红绿重构循环 | 编码实现 |
+| 🎨 UX | `super-dev-ux.md` | 感官级UI/UX验证、无障碍、响应式 | 前端/UI变更 |
+| 🔒 Security | `super-dev-security.md` | 供应链安全、代码审计、依赖扫描 | 依赖变更/部署前 |
+| 🧠 Memory | `super-dev-memory.md` | 分层记忆系统、经验沉淀、知识管理 | 任务完成后 |
+| 🔄 Evolution | `super-dev-evolution.md` | 技能自我进化、套件迭代优化 | 周期性/里程碑 |
+| 🗣️ Shared Lang | `super-dev-shared-language.md` | 共享语言建立、DDD统一语言 | 需求/建模阶段 |
 
 ## 使用方式
 

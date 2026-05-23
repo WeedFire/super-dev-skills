@@ -1,3 +1,6 @@
+## 🧠 Skill 7：Memory（分层记忆系统）
+
+```markdown
 ---
 name: super-dev-memory
 description: 全栈之神·记忆官。管理.memory/三层记忆系统（事实记忆/过程记忆/经验记忆），负责记忆加载、检索、写回、压缩。融合 Hermes Agent、MemSkill、MUSE 的记忆架构。
@@ -79,3 +82,4 @@ trigger: 总控委派 | 每次任务启动时和完成时 | 用户说"记住…/
 
 ## 完成标志
 `✅ 记忆操作完成。交还总控。`
+```

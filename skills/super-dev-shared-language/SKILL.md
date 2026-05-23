@@ -1,3 +1,6 @@
+## 🗣️ Skill 9：Shared Language（统一领域语言）
+
+```markdown
 ---
 name: super-dev-shared-language
 description: 全栈之神·语言官。负责建立和维护项目的统一领域语言（Ubiquitous Language），确保需求、代码、测试、文档中的术语完全一致，消除翻译损耗。
@@ -58,3 +61,4 @@ trigger: 总控委派 | BOOTSTRAP 模式需求确认后 | 发现术语不一致�
 
 ## 完成标志
 `✅ 术语统一完成。CONTEXT.md 已更新。交还总控。`
+```

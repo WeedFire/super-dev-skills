@@ -1,3 +1,6 @@
+## 🔄 Skill 8：Evolution（技能进化）
+
+```markdown
 ---
 name: super-dev-evolution
 description: 全栈之神·进化官。负责子任务反思汇总、Skill 提炼与进化、经验归档、Nudge Engine 运行。融合 Hermes Agent 的 Nudge、MemSkill 的 Designer、MUSE 的反思闭环。
@@ -72,15 +75,18 @@ trigger: 总控委派 | 每个子任务完成后 | 整个任务收尾时
 ```
 
 ## Nudge Engine（提醒引擎）
+基于记忆和历史经验，在以下时机生成提醒：
 
 ### 任务前提醒
+检测到与历史失败模式匹配时：
 ```
 ⚠️ Nudge：上次你开发类似功能时遇到了 X 问题（见 exp-023），建议这次先确认 Y。
 ```
 
 ### 失败后提醒
+检测到重复失败模式时：
 ```
-⚠️ Nudge：这已经是第 3 次出现"暗色模式对比度不足"的问题了。建议创建一个 "暗色模式检查清单" Skill。
+⚠️ Nudge：这已经是第 3 次出现"暗色模式对比度不足"的问题了。建议创建一个 "暗色模式检查清单" Skill，在 UX 审计前自动执行。
 ```
 
 ### 定期维护提醒
