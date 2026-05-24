@@ -1,4 +1,11 @@
-# super-dev-suite — 全栈之神·自进化零缺陷交付套件
+---
+name: super-dev-suite
+description: 全栈之神·自进化零缺陷交付套件总入口。激活后自动启动总控调度系统。
+alwaysOn: true
+triggers:
+  - pattern: "super-dev|全栈之神|超级开发|零缺陷"
+    description: "用户显式激活套件时触发"
+---
 
 ## 套件概述
 
