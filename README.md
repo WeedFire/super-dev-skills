@@ -8,14 +8,15 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-green)]()
 [![Skills](https://img.shields.io/badge/Skills-9%20modular%20roles-9cf)]()
-[![Memory](https://img.shields.io/badge/Memory-.memory%2F%20self--evolution-orange)]()
+[![Memory](https://img.shields.io/badge/Memory-C%3A%5CUsers%5CAdministrator%5C.memory%5C%20global-orange)]()
 
+---
 
 ## ✨ 为什么需要这个套件？
 
 其他开发 Skill 要么是“一次性”的（每次从零开始，不记过往），要么只覆盖代码编写，忽略供应链安全和真实用户体验。**Super-Dev Suite** 是第一个同时具备以下能力的全栈开发套件：
 
-- 🧠 **记忆与进化** – 通过 `.memory/` 三层记忆系统，项目事实、用户偏好、踩坑经验持续沉淀，越用越强。
+- 🧠 **记忆与进化** – 通过全局 `.memory/` 三层记忆系统，项目事实、用户偏好、踩坑经验持续沉淀，越用越强。
 - 🛡️ **供应链安全门禁** – 预安装恶意包扫描、深度静态分析、SBOM+CVE 审计，**恶意包零容忍**。
 - 👁️ **人类感官级 UI/UX 审计** – 独立的体验师角色，模拟最挑剔用户，检测 AI 美学反模式。
 - 🧪 **严格 TDD + 五轴审查** – 融合 agent-skills 的测试金字塔、DAMP、Beyonce Rule 和 Stop-the-Line。
@@ -41,94 +42,118 @@
 
 ---
 
-## 📁 套件结构
+## 📁 套件结构（实际目录）
 
 ```
-
-├── skills/
-│   ├── super-dev-orchestrator.md      # 总控调度：模式识别、任务委派、记忆存取
-│   ├── super-dev-requirements.md     # 需求分析师：结构化深访、用户故事、验收标准
-│   ├── super-dev-architect.md        # 架构师：系统设计、技术选型、ADR
-│   ├── super-dev-tdd.md              # TDD 工匠：垂直切片、红绿重构、五轴审查
-│   ├── super-dev-ux.md               # 体验审计师：感官级 UI/UX 审计、AI 反模式检测
-│   ├── super-dev-security.md         # 安全审计官：供应链门禁、依赖扫描、代码审计
-│   ├── super-dev-memory.md           # 记忆官：三层记忆管理、加载、压缩
-│   ├── super-dev-evolution.md        # 进化官：经验反思、技能提炼、Nudge Engine
-│   └── super-dev-shared-language.md  # 语言官：统一领域语言，消除翻译损耗
-└── memory/                           # 共用记忆库
-    ├── MEMORY.md                     # 项目事实记忆（上限 2200 字符）
-    ├── USER.md                       # 用户认知记忆（上限 1375 字符）
-    ├── SKILLS.md                     # 自进化技能库
-    └── EXPERIENCES/                  # 经验轨迹档案
+openclaw.plugin.json          # 插件配置：声明所有 Skill 及记忆路径
+skills/
+  super-dev-orchestrator/     # 总控调度
+    SKILL.md
+  super-dev-requirements/     # 需求分析师
+    SKILL.md
+  super-dev-architect/        # 架构师
+    SKILL.md
+  super-dev-tdd/              # TDD 工匠
+    SKILL.md
+  super-dev-ux/               # 体验审计师
+    SKILL.md
+  super-dev-security/         # 安全审计官
+    SKILL.md
+  super-dev-memory/           # 记忆官
+    SKILL.md
+  super-dev-evolution/        # 进化官
+    SKILL.md
+  super-dev-shared-language/  # 语言官
+    SKILL.md
+  super-dev-suite/            # 套件总入口
+    SKILL.md
 ```
 
-## 📦 子 Skill 清单
+**全局记忆路径**（所有工具共用，独立于插件项目）：
+```
+C:\Users\Administrator\.memory\
+  ├── MEMORY.md               # 项目事实记忆（上限 2200 字符）
+  ├── USER.md                 # 用户认知记忆（上限 1375 字符）
+  ├── SKILLS.md               # 自进化技能库
+  └── EXPERIENCES/            # 经验轨迹档案
+```
 
-| # | Skill | 文件 | 职责 |
-|---|-------|------|------|
-| 🎯 | Orchestrator | [super-dev-orchestrator.md](skills/super-dev-orchestrator/SKILL.md) | 总控调度、模式识别、任务委派、记忆存取 |
-| 📋 | Requirements | [super-dev-requirements.md](skills/super-dev-requirements/SKILL.md) | 需求深访、用户故事提炼、验收标准、共享语言建立 |
-| 🏗️ | Architect | [super-dev-architect.md](skills/super-dev-architect/SKILL.md) | 系统架构、技术选型、ADR 决策记录 |
-| 🧪 | TDD | [super-dev-tdd.md](skills/super-dev-tdd/SKILL.md) | 测试驱动开发、Red→Green→Refactor 循环 |
-| 🎨 | UX | [super-dev-ux.md](skills/super-dev-ux/SKILL.md) | 感官级 UI/UX 验证、无障碍、响应式 |
-| 🔒 | Security | [super-dev-security.md](skills/super-dev-security/SKILL.md) | 供应链安全门禁、依赖扫描、代码审计 |
-| 🧠 | Memory | [super-dev-memory.md](skills/super-dev-memory/SKILL.md) | 分层记忆系统、经验沉淀、知识检索 |
-| 🔄 | Evolution | [super-dev-evolution.md](skills/super-dev-evolution/SKILL.md) | 技能自我进化、套件迭代优化 |
-| 🗣️ | Shared Lang | [super-dev-shared-language.md](skills/super-dev-shared-language/SKILL.md) | 统一领域语言、消除翻译损耗 |
+---
+
+## 📦 子 Skill 清单（9 个角色）
+
+| # | 角色 | 文件 | 职责 |
+|---|------|------|------|
+| 🎯 | Orchestrator | [skills/super-dev-orchestrator/SKILL.md](skills/super-dev-orchestrator/SKILL.md) | 总控调度、模式识别、任务委派、记忆存取 |
+| 📋 | Requirements | [skills/super-dev-requirements/SKILL.md](skills/super-dev-requirements/SKILL.md) | 需求深访、用户故事提炼、验收标准 |
+| 🏗️ | Architect | [skills/super-dev-architect/SKILL.md](skills/super-dev-architect/SKILL.md) | 系统架构、技术选型、ADR 决策记录 |
+| 🧪 | TDD | [skills/super-dev-tdd/SKILL.md](skills/super-dev-tdd/SKILL.md) | 测试驱动开发、Red→Green→Refactor 循环 |
+| 🎨 | UX | [skills/super-dev-ux/SKILL.md](skills/super-dev-ux/SKILL.md) | 感官级 UI/UX 验证、无障碍、响应式 |
+| 🔒 | Security | [skills/super-dev-security/SKILL.md](skills/super-dev-security/SKILL.md) | 供应链安全门禁、依赖扫描、代码审计 |
+| 🧠 | Memory | [skills/super-dev-memory/SKILL.md](skills/super-dev-memory/SKILL.md) | 分层记忆系统、经验沉淀、知识检索 |
+| 🔄 | Evolution | [skills/super-dev-evolution/SKILL.md](skills/super-dev-evolution/SKILL.md) | 技能自我进化、套件迭代优化 |
+| 🗣️ | Shared Lang | [skills/super-dev-shared-language/SKILL.md](skills/super-dev-shared-language/SKILL.md) | 统一领域语言、消除翻译损耗 |
+
+> 套件总入口为 `skills/super-dev-suite/SKILL.md`，通常会自动激活。
+
+---
 
 ## 🚀 快速开始
 
-### 1. 一键初始化
-将以下脚本保存为 `init.sh` 并运行，自动创建所有文件：
+### 1. 初始化记忆目录（只需一次）
 
-```bash
-#!/bin/bash
-# 全栈之神套件初始化
-set -e
-mkdir -p .claude/skills .memory/EXPERIENCES
+本套件使用全局记忆路径 `C:\Users\Administrator\.memory\`，需手动创建一次：
 
-# 下载技能文件（实际使用时替换为你的文件地址）
-# 或手动将本仓库中的 9 个 .md 文件复制到 .claude/skills/
-
-# 初始化记忆
-echo "# Project Memory (auto-maintained)" > .memory/MEMORY.md
-echo "# User Profile (auto-maintained)" > .memory/USER.md
-echo "# Skills Library (auto-maintained)" > .memory/SKILLS.md
-
-echo "✅ 初始化完成！在 Claude Code 中激活 super-dev-orchestrator 即可开始。"
+```cmd
+mkdir C:\Users\Administrator\.memory\EXPERIENCES
+type nul > C:\Users\Administrator\.memory\MEMORY.md
+type nul > C:\Users\Administrator\.memory\USER.md
+type nul > C:\Users\Administrator\.memory\SKILLS.md
 ```
 
-你也可以直接克隆本仓库，然后将 `skills/` 和 `memory/` 目录复制到项目的 `.claude/` 下。
+> 如果使用 macOS/Linux，请将路径改为 `/home/你的用户名/.memory/`，并在插件配置中相应调整。
 
-### 2. 激活套件
-在 Claude Code 中，输入：
+### 2. 安装插件
+
+将整个仓库内容放入你的 Claude Code 插件目录，确保根目录的 `openclaw.plugin.json` 可被加载。  
+插件加载后，`alwaysOn: true` 的总控、记忆官、进化官会自动启动。
+
+### 3. 开始使用
+
+无需显式激活命令，**直接说出你的开发需求即可**。  
+例如：
 
 ```
-激活 super-dev-orchestrator
+帮我从零开始做一个任务管理工具
 ```
 
-总控会自动加载 `.memory/` 中的所有历史记忆，识别当前任务模式（BOOTSTRAP / FEATURE / FIX / REFACTOR），并委派给对应的子 Skill。
+总控会自动识别为 BOOTSTRAP 模式，依次激活需求分析师、安全审计官、架构师、TDD 工匠，并在最后触发体验审计和进化总结。
 
-### 3. 典型工作流
-- **新项目**：Orchestrator → Requirements → Shared Language → Security → Architect → TDD → UX → Evolution → Memory
-- **新增功能**：Orchestrator（FEATURE 模式）→ Security（仅针对新依赖）→ TDD → UX（只审计变更部分）→ Evolution
+你也可以显式激活某个子技能：
+```
+帮我审查一下新加的依赖是否安全
+```
+
+### 4. 典型工作流
+- **新项目**：Orchestrator → Requirements → Shared Language → Security → Architect → TDD → UX → Evolution → Memory 持久化
+- **新增功能**：Orchestrator（FEATURE 模式）→ Security（仅针对新依赖）→ TDD → UX（审计变更部分）→ Evolution
 - **修复 Bug**：Orchestrator（FIX 模式）→ TDD（Stop-the-Line）→ Evolution
 
 ---
 
 ## 🧩 各角色详解
 
-| 角色 | 文件 | 一句话职责 |
-| :--- | :--- | :--- |
-| 🎯 总控 | `orchestrator` | 模式识别、任务委派、桥接外部 agent-skills |
-| 📋 需求分析师 | `requirements` | 假设先行深访，输出精确验收标准 |
-| 🗣️ 语言官 | `shared-language` | 建立统一术语表，消除“用户 vs Account”类损耗 |
-| 🏗️ 架构师 | `architect` | 系统蓝图、数据库 DDL、ADR 决策记录 |
-| 🧪 TDD 工匠 | `tdd` | 垂直切片、红绿重构、Stop-the-Line 调试 |
-| 🎨 体验审计师 | `ux` | 模拟挑剔用户，检测 AI 美学反模式，输出感官 Bug |
-| 🔒 安全审计官 | `security` | 四道供应链扫描，Always/Ask/Never 边界 |
-| 🧠 记忆官 | `memory` | 三层记忆的读写压缩，语义检索 |
-| 🔄 进化官 | `evolution` | 子任务反思、Skill 提炼、Nudge 提醒 |
+| 角色 | 一句话职责 |
+| :--- | :--- |
+| 🎯 总控 | 模式识别、任务委派、桥接外部 agent-skills |
+| 📋 需求分析师 | 假设先行深访，输出精确验收标准 |
+| 🗣️ 语言官 | 建立统一术语表，消除“用户 vs Account”类损耗 |
+| 🏗️ 架构师 | 系统蓝图、数据库 DDL、ADR 决策记录 |
+| 🧪 TDD 工匠 | 垂直切片、红绿重构、Stop-the-Line 调试 |
+| 🎨 体验审计师 | 模拟挑剔用户，检测 AI 美学反模式，输出感官 Bug |
+| 🔒 安全审计官 | 四道供应链扫描，Always/Ask/Never 边界 |
+| 🧠 记忆官 | 三层记忆的读写压缩，语义检索 |
+| 🔄 进化官 | 子任务反思、Skill 提炼、Nudge 提醒 |
 
 ---
 
@@ -163,4 +188,3 @@ echo "✅ 初始化完成！在 Claude Code 中激活 super-dev-orchestrator 即
 ## 📄 许可证
 
 MIT © 2026 小草
-```
