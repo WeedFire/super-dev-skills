@@ -1,82 +1,83 @@
 {
   "name": "super-dev-suite",
   "version": "1.0.0",
-  "description": "全栈之神·自进化零缺陷交付套件 - 9角色协作，内化Google工程文化，自带记忆与进化能力",
+  "description": "全栈之神·自进化零缺陷交付套件",
   "author": "Super-Dev Suite",
   "license": "MIT",
   "skills": [
     {
+      "id": "super-dev-suite",
+      "name": "Suite",
+      "description": "套件总入口",
+      "file": "skills/super-dev-suite/SKILL.md",
+      "alwaysOn": true
+    },
+    {
       "id": "super-dev-orchestrator",
-      "name": "Super Dev Orchestrator",
+      "name": "Orchestrator",
       "description": "总控调度：模式识别、任务委派、记忆存取",
       "file": "skills/super-dev-orchestrator/SKILL.md",
       "alwaysOn": true
     },
     {
       "id": "super-dev-requirements",
-      "name": "Super Dev Requirements",
-      "description": "需求分析师：结构化深访、用户故事、验收标准",
-      "file": "skills/super-dev-requirements/SKILL.md",
-      "alwaysOn": false
+      "name": "Requirements",
+      "description": "需求分析师",
+      "file": "skills/super-dev-requirements/SKILL.md"
     },
     {
       "id": "super-dev-shared-language",
-      "name": "Super Dev Shared Language",
-      "description": "语言官：统一领域语言，消除翻译损耗",
-      "file": "skills/super-dev-shared-language/SKILL.md",
-      "alwaysOn": false
+      "name": "Shared Language",
+      "description": "语言官：统一领域语言",
+      "file": "skills/super-dev-shared-language/SKILL.md"
     },
     {
       "id": "super-dev-security",
-      "name": "Super Dev Security",
-      "description": "安全审计官：供应链门禁、依赖扫描、代码审计",
-      "file": "skills/super-dev-security/SKILL.md",
-      "alwaysOn": false
+      "name": "Security",
+      "description": "安全审计官",
+      "file": "skills/super-dev-security/SKILL.md"
     },
     {
       "id": "super-dev-architect",
-      "name": "Super Dev Architect",
-      "description": "架构师：系统设计、技术选型、ADR",
-      "file": "skills/super-dev-architect/SKILL.md",
-      "alwaysOn": false
+      "name": "Architect",
+      "description": "架构师",
+      "file": "skills/super-dev-architect/SKILL.md"
     },
     {
       "id": "super-dev-tdd",
-      "name": "Super Dev TDD",
-      "description": "TDD工匠：垂直切片、红绿重构、五轴审查",
-      "file": "skills/super-dev-tdd/SKILL.md",
-      "alwaysOn": false
+      "name": "TDD Craftsman",
+      "description": "TDD工匠",
+      "file": "skills/super-dev-tdd/SKILL.md"
     },
     {
       "id": "super-dev-ux",
-      "name": "Super Dev UX",
-      "description": "体验审计师：感官级UI/UX审计、AI反模式检测",
-      "file": "skills/super-dev-ux/SKILL.md",
-      "alwaysOn": false
+      "name": "UX Auditor",
+      "description": "体验审计师",
+      "file": "skills/super-dev-ux/SKILL.md"
     },
     {
       "id": "super-dev-evolution",
-      "name": "Super Dev Evolution",
-      "description": "进化官：经验反思、技能提炼、Nudge Engine",
+      "name": "Evolution",
+      "description": "进化官",
       "file": "skills/super-dev-evolution/SKILL.md",
-      "alwaysOn": false
+      "alwaysOn": true
     },
     {
       "id": "super-dev-memory",
-      "name": "Super Dev Memory",
-      "description": "记忆官：三层记忆管理、加载、压缩",
+      "name": "Memory",
+      "description": "记忆官",
       "file": "skills/super-dev-memory/SKILL.md",
       "alwaysOn": true
     }
   ],
   "memory": {
     "enabled": true,
-    "path": ".memory/",
+    "path": "C:\\Users\\Administrator\\.memory\\",
     "files": {
       "project": "MEMORY.md",
       "user": "USER.md",
       "skills": "SKILLS.md",
-      "experiences": "EXPERIENCES/"
+      "experiences": "EXPERIENCES\\"
     }
   }
 }
